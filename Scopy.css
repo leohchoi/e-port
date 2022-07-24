@@ -13,6 +13,10 @@ h1,h2,h3,h4,h5,h6,span{
     line-height: 1.25;
 }
 
+h1{
+    font-size: 36px;
+}
+
 p{
     line-height: 1.5;
     font-size: 16px;
@@ -20,6 +24,36 @@ p{
 
 li{
     list-style-type: none;
+}
+
+.flex{
+    display: flex;
+}
+
+.flex-1{
+    flex: 1;
+}
+
+.container{
+    padding: 50px 0;
+}
+
+.row{
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.text--purple{
+    color: #6030b1;
+}
+
+section:nth-child(even){   /*every even section */
+    background-color: #f8f8f8;
+}
+
+.section__title{
+    margin-bottom: 20px;
 }
 
 /* Navigation Bar */
@@ -63,3 +97,144 @@ nav{
     margin: 0 12px;
     font-weight: bold;
 }
+
+/* About Me */
+
+/* by making about-me 100vh(vertical height), you make it take up the entire height of the page
+   then you do flex-1 and do flex: 1 to make the div class flex-1 take up the entire height, then 
+   do dispolay flex on class flex to make the child class, which is the about-me__info also take up the entire height
+   of the page
+*/
+
+#about-me{
+    min-height: 100vh;                           
+    display: flex;
+    flex-direction: column;
+}
+
+.about-me__info{
+    display: flex;
+    flex-direction: column;
+}
+
+.about-me__info--container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-me__picture--mask{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgb(0, 0, 0, 0.64); 
+    margin-bottom: 28px;
+}
+
+/* creates shadow behind the img/0.64 is how strong the shadown is, 8px controls how much the shadow is below the img, 16px
+is how much the shadow is blurred/opaqued
+*/
+
+.about-me__picture{
+    width: 100%;
+    /*improving my picture by zooming in */
+    transform: scale(1.2);
+    padding-top: 6px; /* padding top makes the picture move down ig? usually do increments of 4 px*/
+}
+
+.about-me__info--title{
+    margin-bottom: 16px;
+}
+
+.about-me__info--para{
+    font-size: 20px;
+    margin-bottom: 28px;
+}
+
+/* in the link icons, where it is fab fa-github and far fa-envelope, the b stands for brands, r stand for regular, 
+   s stands for solid, etc.
+*/
+
+.about-me__link{
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    padding: 0 16px;
+}
+
+/* maybe you need to use display flex flex direction column combo to use flex: 1 in a child class
+*/
+
+.about-me__img--container{
+    flex: 1; 
+    display: flex;
+    align-items: center;
+    margin: 100px 0;
+}
+
+.about-me__img{
+    width: 100%;
+}
+
+/*using percentages help with responsivness of page */
+
+/* Tech Stack */
+
+.language__img{
+    width: 100%;
+    max-width: 100px;
+    transition: all 300ms ease;
+}
+
+.language:hover .language__img{  /* as soon as we hover over the language, we target the img */
+    filter: brightness(80%); /*changes brightness of img, lower it is, closer to black it is */
+    opacity: 0.86;           /* lower it is, more opaque it becomes */
+    transform: scale(0.9);
+}
+
+.language{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    position: relative; 
+}
+
+/* need to position relative or lese the language name will position itself off the next parent class which is
+   outside the section. to use bottom, left, right, top, you need to call position relative or smt else on the class
+   you wanna use on
+*/
+
+.language__img--wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 16px;
+}
+
+.language__list{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.language__name{
+    position: absolute;
+    bottom: 0;
+    transform: scale(0);
+    transition: all 300ms ease;
+    font-size: 20px;
+    opacity: 0;
+}
+
+.language:hover .language__name{
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* this makes the language name disappear until you hover over it
+*/
