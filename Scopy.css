@@ -243,6 +243,7 @@ is how much the shadow is blurred/opaqued
 
 .project__img{
     width: 100%;
+    transition: transform 500ms ease;
 }
 
 .project__wrapper{
@@ -250,6 +251,44 @@ is how much the shadow is blurred/opaqued
     box-shadow: 0 20px 80px rgb(0, 0, 0, 0.45);
     border-radius: 20px;
     overflow: hidden;
+    position: relative; /* need to do this so that the before pseudo-class anchors itself to the wrapper */
 }
 
+/*This is the part where you make the content pop up and background goes 
+  black-ish when hovering over it
+*/
 
+/* This is using the before pseudo class. When using pseudo classes, you have to 
+   always set the content
+*/
+
+.project__wrapper:before{
+    content: "";
+    position: absolute;  /* since you dont want this to effect the position of anything else */
+    top: 0;
+    left: 0;
+    height: 100%; /* 100% of it's parent */
+    width: 100%;  /* 100% of it's parent */
+    background-color: #1c1d25;
+    opacity: 0;   /* picture starts clear picture, then with the hover class below, it changes it's opacity */
+    transition: opacity 450ms ease;
+    z-index: 2;
+}
+
+/* need to set z-index so that both opacity and scaling transformation shows. z-index interacts with 
+   the elements that are stacked on top of each other; or else it will only show the "most recent" element.
+   in this case, without the z-index, we would only see the scaling and opacity but not background color change
+*/
+
+.project:hover .project__wrapper:before{
+    opacity: 0.7;
+}
+
+.project:hover .project__img{
+    transform: scale(1.07);
+    filter: blur(5px);
+}
+
+.project__list{
+    padding-top: 40px;
+}
