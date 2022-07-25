@@ -238,3 +238,18 @@ is how much the shadow is blurred/opaqued
 
 /* this makes the language name disappear until you hover over it
 */
+
+/* Project Stack */
+
+.project__img{
+    width: 100%;
+}
+
+.project__wrapper{
+    display: flex;
+    box-shadow: 0 20px 80px rgb(0, 0, 0, 0.45);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+
