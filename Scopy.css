@@ -87,8 +87,8 @@ li {
   padding: 0 12px;
 }
 
-.text--purple {
-  color: #6030b1;
+.text--green {
+  color: #01C30C;
 }
 
 section:nth-child(even) {
@@ -124,7 +124,7 @@ nav {
 }
 
 .nav__link--anchor-primary {
-  background-color: #6030b1;
+  background-color: #01C30C;
   padding: 8px 20px;
   border-radius: 50px;
   color: white;
@@ -132,12 +132,12 @@ nav {
 }
 
 .nav__link--anchor-primary:hover {
-  background-color: #5d3eff;
+  background-color: #05E610;
 }
 
 .personal__logo {
   font-size: 24px;
-  color: #6030b1;
+  color: #01C30C;
   margin: 0 12px;
   font-weight: bold;
 }
@@ -371,7 +371,7 @@ is how much the shadow is blurred/opaqued
   transition: transform 500ms ease;
 }
 
-.euchre{
+.euchre, .resized{
   width: 80%;
 }
 
@@ -541,6 +541,11 @@ footer {
   .project__description {
     left: 30px;
     padding-right: 30px;
+  }
+  
+  .footer__logo--img{
+    width: 80px;
+    height: 80px;
   }
 }
 
