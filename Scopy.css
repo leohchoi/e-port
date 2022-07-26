@@ -241,6 +241,14 @@ is how much the shadow is blurred/opaqued
 
 /* Project Stack */
 
+.project{
+    margin-bottom: 135px;
+}
+
+.project:last-child{   /* to get rid of the excess whitespace at the bottom of the project stack that comes from the 135px */
+    margin-bottom: 40px;
+}
+
 .project__img{
     width: 100%;
     transition: transform 500ms ease;
@@ -289,6 +297,60 @@ is how much the shadow is blurred/opaqued
     filter: blur(5px);
 }
 
+.project:hover .project__description{
+    opacity: 1;
+    transform: translateY(-50%);
+}
+
 .project__list{
     padding-top: 40px;
 }
+
+.project__description{
+    position: absolute; /* we want the text to be independent of everything and not affect anything */
+    top: 50%;
+    left: 90px;
+    transform: translateY(100%); /* putting it at -50% positions description in the center, 100% positions it at the bottom */
+    max-width: 550px;
+    z-index: 3;
+    opacity: 0;
+    transition: transform 450ms ease, opacity 300ms ease;
+}
+
+.project__description--title{
+    font-size: 40px;
+}
+
+.project__description--para{
+    margin: 16px 0;
+}
+
+.project__description--link{
+    font-size: 20px;
+    margin-right: 16px;
+    text-decoration: none;
+}
+
+.project__description--title,
+.project__description--subtitle,
+.project__description--para,
+.project__description--link{
+    text-align: left;
+    color: white;
+}
+
+/* Footer */
+
+footer{
+    background-color: #242424;
+}
+
+.footer__row{
+    padding: 8% 0;
+}
+
+.footer__logo--img{
+    width: 70px;
+    height: 70px;
+}
+
