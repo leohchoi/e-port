@@ -371,12 +371,17 @@ is how much the shadow is blurred/opaqued
   transition: transform 500ms ease;
 }
 
+.euchre{
+  width: 80%;
+}
+
 .project__wrapper {
   display: flex;
   box-shadow: 0 20px 80px rgb(0, 0, 0, 0.45);
   border-radius: 20px;
   overflow: hidden;
   position: relative; /* need to do this so that the before pseudo-class anchors itself to the wrapper */
+  justify-content: center;
 }
 
 /*This is the part where you make the content pop up and background goes 
