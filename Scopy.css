@@ -371,8 +371,16 @@ is how much the shadow is blurred/opaqued
   transition: transform 500ms ease;
 }
 
-.euchre, .resized{
+.euchre{
   width: 80%;
+}
+
+.resized{
+  width: 76.54%;
+}
+
+.bookstore{
+  width: 77.626%;
 }
 
 .project__wrapper {
