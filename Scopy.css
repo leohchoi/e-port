@@ -254,7 +254,7 @@ is how much the shadow is blurred/opaqued
   flex: 1;
   display: flex;
   align-items: center;
-  margin: 100px 0;
+  margin-top: 25px;
 }
 
 .about-me__img {
